@@ -6,10 +6,6 @@ txtAdminEmailId='input[type="text"]';
 txtAdminPassword="input[type='password']";
 btnLogin='span';
 lblLandingPage='.navigation-AppName-1_BPN.navigation-Active-3e2I2';
-btnSwithcToLoginWithOTP='.login-signin-switch';
-btnByContinueWithAgree='.ant-form-item-control-input-content > p';
-btnsignUp='.ant-form-item-control-input-content > p';
-
 
 
 getEmailTextField(userEmail)
@@ -36,12 +32,4 @@ verifyLandingPage()
 }
 
 }
-
-btnSwithcToLoginWithOTP()
-{
- 
-    return cy.get(this.btnSwithcToLoginWithOTP).click();
-
-}
-
 export default LoginPage;

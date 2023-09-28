@@ -22,9 +22,11 @@ module.exports = defineConfig({
   e2e: {
     setupNodeEvents,
     projectId: "qmie1a",
+    specPattern: 'cypress/e2e/*.js',
     //specPattern: 'cypress/integration/example/BDD/*.js',
-   specPattern : 'cypress/integration/example/BDD/*.feature',
-    defaultCommandTimeout:10000,
+  // specPattern : 'cypress/integration/example/BDD/*.feature',
+   "chromeWebSecurity": false ,
+    defaultCommandTimeout:25000,
     
   },
 });
