@@ -21,10 +21,6 @@ const departmentValue=faker.internet.userName();
 
 
 
-
-
-
-
 const loginPage= new LoginPage()
 const logout=new LogOutPage()
 const createactivitypageobj = new CreateActivityPage()
