@@ -18,10 +18,13 @@ async function setupNodeEvents(on, config) {
 }
 
 module.exports = defineConfig({
+    
   
   e2e: {
     setupNodeEvents,
-    projectId: "qmie1a",
+    //projectId: "qmie1a",
+   // projectId: "d9dxoc",
+   projectId: "2zedvd",
     specPattern: 'cypress/e2e/*.js',
     //specPattern: 'cypress/integration/example/BDD/*.js',
   // specPattern : 'cypress/integration/example/BDD/*.feature',

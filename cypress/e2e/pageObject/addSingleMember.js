@@ -4,9 +4,10 @@ class AddSingleMember
 
 
 selectAddMember=':nth-child(2) > .navigation-AppName-1_BPN';
-clickOnSingleMemberbtn='.ant-btn-compact-first-item > div';
-enterMemberFirstName=':nth-child(1) > :nth-child(2) > .input';
-enterMemberLastName=':nth-child(1) > :nth-child(3) > .input';
+clickOnMemberBookBtn='[style="width: 100%; display: flex; align-items: center; border-bottom: 1px solid rgb(211, 221, 220); background-color: rgb(255, 255, 255); padding: 0px 17px;"] > :nth-child(2) > a';
+clickOnSingleMemberbtn='.ant-btn.ant-btn-default.ant-btn-compact-item.ant-btn-compact-first-item';
+enterMemberFirstName='input[placeholder="Enter first name"]';
+enterMemberLastName='input[placeholder="Enter first name"]';
 emailOfMember=':nth-child(4) > .input';
 phoneNumberOfMember='.form-control';
 genderdropdown =':nth-child(1) > :nth-child(6) > .ant-select > .ant-select-selector';
@@ -22,6 +23,11 @@ clickOnAddMember()
     return cy.get(this.selectAddMember).click();
 }
 
+
+getClickonMemberBookBtn()
+{
+    return cy.get(this.clickOnMemberBookBtn).click();
+}
 
 getbtnClickOnSingleMember()
 {
