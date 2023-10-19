@@ -72,28 +72,5 @@ getclickOnSendInviteButton()
 
 }
 
-
-
-
-
-
-
-
-
-
-
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
 export default CreateSingleInvite;

@@ -2,8 +2,12 @@
 class AddSingleMember
 {
 
+//clickOnMoreApps ='.navigation-AppName-1_BPN.navigation-Active-3e2I2';
 
-selectAddMember=':nth-child(2) > .navigation-AppName-1_BPN';
+
+//clickOnMemberDirectory='ul > :nth-child(2) > :nth-child(2)';
+
+selectAddMember=':nth-child(2) > .navigation-AppName-1_BPN'; 
 clickOnMemberBookBtn='[style="width: 100%; display: flex; align-items: center; border-bottom: 1px solid rgb(211, 221, 220); background-color: rgb(255, 255, 255); padding: 0px 17px;"] > :nth-child(2) > a';
 clickOnSingleMemberbtn='.ant-btn.ant-btn-default.ant-btn-compact-item.ant-btn-compact-first-item';
 enterMemberFirstName='input[placeholder="Enter first name"]';
@@ -16,6 +20,16 @@ department=':nth-child(2) > :nth-child(3) > .input';
 groupDropDown=':nth-child(4) > .ant-select > .ant-select-selector';
 createMemberbtn='.ant-btn-primary > span';
 
+
+clickOnMoreAppsButtom()
+{
+    return cy.get(this.clickOnMoreApps);
+}
+
+clickOnMemberDirectoryFromDropDown()
+{
+    return cy.get(this.clickOnMemberDirectory).click();
+}
 
 
 clickOnAddMember()
