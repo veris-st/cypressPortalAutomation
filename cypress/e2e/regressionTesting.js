@@ -366,7 +366,7 @@ cy.get('.ct-toast').should('include.text', 'Terminal updated');
 
 
 
-//Code For Logout
+//Code For Logout ;;;;
 
 
 /*
