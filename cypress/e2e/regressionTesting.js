@@ -355,6 +355,7 @@ cy.get('.ct-toast').should('include.text', 'Terminal updated');
 //reportTemplateObj.getclickOnAddTemplatebtn();
 //reportTemplateObj.getenterReportTemplateName();
 //reportTemplateObj.getenterReportTemplateDesc();
+          //This is used for testing of CI/CD
 
 
 
