@@ -104,6 +104,7 @@ cy.wait(5000);
 //createactivitypageobj.getDefaultVenueCheckBox();
 
 
+
 createactivitypageobj.getVisitorContactPrimary(guestEmailId);
 
 cy.wait(5000);
@@ -384,5 +385,5 @@ cy.wait(5000);
   //it('Logout Test', () => {
 
 
-
+//This is used for CICD testing
   })
