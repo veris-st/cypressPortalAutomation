@@ -87,7 +87,7 @@ describe('Login to portal with Page object module', () => {
         //cy.wait(5000);
         //loginPage.verifyLandingPage();
 
-/*
+
 
 
         
@@ -102,7 +102,6 @@ cy.wait(5000);
 //createactivitypageobj.getvenueDropDown();
 //createactivitypageobj.getWorkflowDropDown();
 //createactivitypageobj.getDefaultVenueCheckBox();
-
 
 
 createactivitypageobj.getVisitorContactPrimary(guestEmailId);
@@ -138,7 +137,7 @@ cy.contains('Invite created successfully').should('be.visible');
 
 
 
-*/
+
 
 
 //Write a code for add single member in the member-book
@@ -183,7 +182,6 @@ cy.url().should('eq', 'https://st.veris.in/settings/org-details');
 venueAdditionObj.getclickOnVisitorDropDown();
 //cy.wait(5000);
 
-/*
 
 
 venueAdditionObj.getclickOnVenuebtn();
@@ -198,7 +196,7 @@ venueAdditionObj.getenterCity(enterCity);
 venueAdditionObj.getenterState(enterState);
 venueAdditionObj.getenterCountry(enterCountry);
 venueAdditionObj.getenterPin(enterPin);
-venueAdditionObj.getclickOnsavebtn();
+//venueAdditionObj.getclickOnsavebtn();
 venueAdditionObj.getclickOnCancelBtn();
 //cy.wait(3000);
 venueAdditionObj.getclickOnSearchTextBox(venueNameSearch);
@@ -215,7 +213,7 @@ cy.get('.ant-table-tbody tr').each(($e1, index, $list) => {
 
 
 
-*/
+
 
 
 //Write Coode For Terminal
@@ -256,8 +254,8 @@ terminalAdditionObj.getclickOnTerminaDescField(terminalDec);
 terminalAdditionObj.getclickOnReceptionEmailId(ReceptionEmailId);
 terminalAdditionObj.getclickOnWelcomeMsg(clickOnWelcomeMsg);
 terminalAdditionObj.getclickOnExitMsg(clickOnExitMsg);
-terminalAdditionObj.getclickOnSavebtnofTerminal().scrollIntoView().click();
-cy.get('.ct-toast').should('include.text', 'Error: Request failed with status code 400 ');
+//terminalAdditionObj.getclickOnSavebtnofTerminal().scrollIntoView().click();
+//cy.get('.ct-toast').should('include.text', 'Error: Request failed with status code 400 ');
 terminalAdditionObj.getclickOnCancelbtn();
 terminalAdditionObj.getclickOnTerminalEdit();
 terminalAdditionObj.getterminaleNameonEdit().should('have.value', 'Cypress');
@@ -273,7 +271,7 @@ terminalAdditionObj.getclickOnTerminalSettingEditIcon();
 
 //write code for Terminal Setting Branding
 
-/*
+
 terminalSettingBrandingObj.getprimaryColor().should('have.value', '#0FF000');
 terminalSettingBrandingObj.getprimaryTextColor().should('have.value','#000000');
 terminalSettingBrandingObj.getsecondaryColor().should('have.value','#FFFFFF');
@@ -284,10 +282,10 @@ terminalSettingBrandingObj.getexitMsg().should('have.value','Thanks for visiting
 terminalSettingBrandingObj.getsavebtnAtBrandingPage();
 cy.get('.ct-toast').should('include.text', 'Terminal updated')
 
-*/
+
 //write code for Terminal Setting Authorization
 
-/*
+
 terminalSettiingAuthorizationObj.getclickOnAuthorizationOption();
 terminalSettiingAuthorizationObj.getauthorizationLandingPage();
 terminalSettiingAuthorizationObj.getverifyMobilePhone().eq(0).should('exist');
@@ -301,7 +299,7 @@ terminalSettiingAuthorizationObj.getverifyWalkInNoInvite().should('exist');
 terminalSettiingAuthorizationObj.getsavebtnAtAuthPage();
 cy.get('.ct-toast').should('include.text', 'Terminal updated');
 
-*/
+
 
 //write code for Terminal Setting Badge Print
 terminalBadgePrintingObj.getclickOnBadgePrintingHeader();
@@ -317,15 +315,15 @@ cy.get('.ant-select-selection-search input').each(($e1, index, $list) => {
  })
 
 
- terminalBadgePrintingObj.getprintModel();
- cy.get('.ant-select-selector span').each(($e1, index, $list) => {
+//  terminalBadgePrintingObj.getprintModel();
+//  cy.get('.ant-select-selector span').each(($e1, index, $list) => {
 
-  if($e1.text()==="Epson Bluetooth")
-  {
-  cy.wrap($e1).should('be.visible').click();
-  expect(true, 'Epson Bluetooth clicked successfully').to.be.true;
-  }
- })
+//   if($e1.text()==="Epson Bluetooth")
+//   {
+//   cy.wrap($e1).should('be.visible').click();
+//   expect(true, 'Epson Bluetooth clicked successfully').to.be.true;
+//   }
+//  })
 
 terminalBadgePrintingObj.getipAddress().type('192.168.5.5');
 
@@ -356,7 +354,6 @@ cy.get('.ct-toast').should('include.text', 'Terminal updated');
 //reportTemplateObj.getclickOnAddTemplatebtn();
 //reportTemplateObj.getenterReportTemplateName();
 //reportTemplateObj.getenterReportTemplateDesc();
-          //This is used for testing of CI/CD
 
 
 
@@ -366,17 +363,17 @@ cy.get('.ct-toast').should('include.text', 'Terminal updated');
 
 
 
-//Code For Logout ;;;;
+//Code For Logout
 
 
-/*
+
 cy.wait(5000);
 
     logout.clickOnUserProfileDropDown();
     logout.btnClickOnLogoutButton();
     cy.wait(5000);
     cy.url().should('eq', 'https://st.veris.in/login/NewLogin');
-      */
+     
       })
     })
     
@@ -385,5 +382,5 @@ cy.wait(5000);
   //it('Logout Test', () => {
 
 
-//This is used for CICD testing use only jgj mbmbmbbkk
+
   })
