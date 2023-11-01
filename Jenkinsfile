@@ -1,3 +1,6 @@
+npm i
+npm run test
+
 // pipeline {
 //   agent any
 
