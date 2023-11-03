@@ -9,7 +9,6 @@ class TerminalBadgePrinting
     saveBtnAtBadgePrintingPage='.ant-col-6 > .ant-btn';
 
 
-
 getclickOnBadgePrintingHeader()
 {
     return cy.get(this.clickOnBadgePrintingHeader).click();
@@ -40,7 +39,7 @@ getipAddress()
 }
 getsaveBtnAtBadgePrintingPage()
 {
-    return cy.get(this.saveBtnAtBadgePrintingPage);
+    return cy.get(this.saveBtnAtBadgePrintingPage).click();
 
 }
 
