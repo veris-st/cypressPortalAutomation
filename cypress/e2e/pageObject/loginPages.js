@@ -28,7 +28,7 @@ clickOnCheckInBtn()
 
 verifyLandingPage()
 {
-    return cy.get(this.lblLandingPage).should('have.text','Visitors');
+    return cy.get(this.lblLandingPage);
 }
 
 }

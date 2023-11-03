@@ -1,35 +1,22 @@
 const { defineConfig } = require("cypress");
-const {
-  addCucumberPreprocessorPlugin,
-} = require("@badeball/cypress-cucumber-preprocessor");
-const {
-  preprocessor,
-} = require("@badeball/cypress-cucumber-preprocessor/browserify");
-
-
-async function setupNodeEvents(on, config) {
-  // This is required for the preprocessor to be able to generate JSON reports after each run, and more,
-  await addCucumberPreprocessorPlugin(on, config);
-
-  on("file:preprocessor", preprocessor(config));
-
-  // Make sure to return the config object as it might have been modified by the plugin.
-  return config;
-}
 
 module.exports = defineConfig({
-    
+
+  reporter: 'cypress-mochawesome-reporter',
   
   e2e: {
-    setupNodeEvents,
-    //projectId: "qmie1a",
-   // projectId: "d9dxoc",
-   projectId: "2zedvd",
-    specPattern: 'cypress/e2e/*.js',
+    "defaultCommandTimeout": 25000,
+    setupNodeEvents(on, config){
+
+    require("cypress-mochawesome-reporter/plugin")(on);
+    screenshotOnRunFailure=true;
+  // projectId: "2zedvd",
+    //specPattern: 'cypress/e2e/*.js',
     //specPattern: 'cypress/integration/example/BDD/*.js',
   // specPattern : 'cypress/integration/example/BDD/*.feature',
-   "chromeWebSecurity": false ,
-    defaultCommandTimeout:25000,
-    
+   //"chromeWebSecurity": false ,
+   
+
+    }
   },
 });
