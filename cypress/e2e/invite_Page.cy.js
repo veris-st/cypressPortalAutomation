@@ -43,7 +43,7 @@ const createSingleInviteObj =new CreateSingleInvite()
 
 
 
-//Write code for Create Invite Page 
+//Write code for Create Invite Page  test
 describe('Create Invite from Portal', () => {
 
     
