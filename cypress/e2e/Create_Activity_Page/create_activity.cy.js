@@ -68,7 +68,7 @@ it('Create Activity Page', () => {
     createactivitypageobj.getConfirmCheckinButton().click({force: true});
     
     cy.contains('Activity created successfully').should('be.visible');
-    createactivitypageobj.getBtnClickOnBadgePrintCancel();
+    createactivitypageobj.getBtnClickOnBadgePrintCancel().click();
     
       })
 })

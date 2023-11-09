@@ -166,13 +166,13 @@ getConfirmCheckinButtonValidation()
 
 getConfirmCheckinButton()
 {
-    return cy.get(this.confirmCheckinButton).click();
+    return cy.get(this.confirmCheckinButton);
 
 }
 
 getBtnClickOnBadgePrintCancel()
     {
-        return cy.get(this.badgePrint).click();
+        return cy.get(this.badgePrint);
     }
 
 

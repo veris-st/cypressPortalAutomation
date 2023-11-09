@@ -1,5 +1,7 @@
 import LoginPage from "../pageObject/loginPages.js"
 import AddVenue from "../pageObject/addVenue.js";
+import VenueSettingEdit from "../pageObject/venue_Setting_Edit.js";
+
 
 const { faker } = require('@faker-js/faker');
 
@@ -32,10 +34,10 @@ const visitorReportTemplateName="Cypress Automation Description Text";
 
 const loginPage= new LoginPage()
 const venueAdditionObj=new AddVenue()
-
+const venueSettingEditObj = new VenueSettingEdit()
 
 //Write code for Create Invite Page 
-describe(' Venue Page', () => {
+describe(' Venue Page : Venue Edit', () => {
 
     
     before('Login to Portal', () => {
@@ -47,7 +49,7 @@ describe(' Venue Page', () => {
         loginPage.getEmailTextField(data.adminEmailId);
         loginPage.getPasswordTextField(data.adminPassword);
         loginPage.clickOnCheckInBtn();
-        cy.wait(5000);
+        //cy.wait(5000);
         loginPage.verifyLandingPage();
 
     
@@ -71,18 +73,10 @@ it('Venue  Page', () => {
     venueAdditionObj.getclickOnVenuebtn();
     //cy.wait(5000);
     cy.url().should('eq','https://st.veris.in/settings/venues');
-    
-    venueAdditionObj.getclickOnAddVenuebtn();
-    venueAdditionObj.getenterVenueName(venueName);
-    venueAdditionObj.getenterVenueDesc(venueName);
-    venueAdditionObj.getenterVenueAddress1(VenueAddressLine1);
-    venueAdditionObj.getenterCity(enterCity);
-    venueAdditionObj.getenterState(enterState);
-    venueAdditionObj.getenterCountry(enterCountry);
-    venueAdditionObj.getenterPin(enterPin);
-    //venueAdditionObj.getclickOnsavebtn();
-    venueAdditionObj.getclickOnCancelBtn();
-    //cy.wait(3000);
+
+    //Write the code for venue List
+
+   
     venueAdditionObj.getclickOnSearchTextBox(venueNameSearch);
     
     cy.get('.ant-table-tbody tr').each(($e1, index, $list) => {
@@ -94,7 +88,37 @@ it('Venue  Page', () => {
       
       
      })
+     cy.contains("Cypress Automation Test (VMS)").should("exist");
+     cy.contains("Cypress Automation Test (VMS)").should("exist");
     
+    
+    
+
+
+  //Write the code for venue Setting Edit 
+
+  //venueSettingEditObj.getvenueEditIcon();
+  venueSettingEditObj.getvenueEditIcon().click({ force: true });
+
+    venueSettingEditObj.geteditVenuePageTitle().contains("Edit Venue").should("exist");
+     cy.get('.ant-drawer-body').should('be.visible'); 
+
+
+    
+
+     venueSettingEditObj.getvenueNameEdit().should('have.value', 'Cypress Automation Test (VMS)');
+     venueSettingEditObj.getvenueDescEdit().contains("Cypress Automation Test (VMS)").should("exist");
+     venueSettingEditObj.getaddressLine1OnVenueEdit().contains("Sector 48").should("exist");
+     venueSettingEditObj.getstateVenueEdit().contains("Haryana").should("exist");
+     venueSettingEditObj.getcountryVenueEdit().contains("India").should("exist");
+     venueSettingEditObj.getPincodeVenueEdit().contains("122001").should("exist");
+     venueSettingEditObj.getcancelbtnEditVenue().click();
+
+
+
+
+
+
     
     })
     

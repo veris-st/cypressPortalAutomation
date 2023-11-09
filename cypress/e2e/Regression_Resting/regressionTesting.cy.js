@@ -279,7 +279,7 @@ cy.get('.ant-table-cell div').each(($e1, index, $list) => {
 
 terminalAdditionObj.getclicOnAddTerminalbtn();
 
-cy.get('.ant-drawer-content-wrapper').should('be.visible'); // Replace '.drawer-class' with the actual class of your drawer
+cy.get('.ant-drawer-body').should('be.visible'); // Replace '.drawer-class' with the actual class of your drawer
 
 terminalAdditionObj.getclickOnTerminalName(newTerminalName);
 terminalAdditionObj.getclickOnTerminaDescField(terminalDec);
