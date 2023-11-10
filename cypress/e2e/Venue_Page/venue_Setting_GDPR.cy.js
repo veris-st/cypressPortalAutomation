@@ -1,6 +1,12 @@
 import LoginPage from "../pageObject/loginPages.js"
 import AddVenue from "../pageObject/addVenue.js";
 import VenueSettingEdit from "../pageObject/venue_Setting_Edit.js";
+import ManageVenueSetting from "../pageObject/venue_Setting_manageSetting.js";
+import VenueSettingNotificationCustom from "../pageObject/venueSetting_notification.js";
+import VenueSettingGDPR from "../pageObject/venue_Setting_GDPR.js";
+
+
+
 
 
 const { faker } = require('@faker-js/faker');
@@ -35,9 +41,17 @@ const visitorReportTemplateName="Cypress Automation Description Text";
 const loginPage= new LoginPage()
 const venueAdditionObj=new AddVenue()
 const venueSettingEditObj = new VenueSettingEdit()
+const ManageVenueSettingObj=new ManageVenueSetting()
+const venueSettingNotificationCustomObj = new VenueSettingNotificationCustom()
+const venueSettingGDPRObj =new VenueSettingGDPR()
+
+
+
+
+
 
 //Write code for Create Invite Page 
-describe(' Venue Page : Venue Edit', () => {
+describe(' Venue Page : Venue Setting - GDPR', () => {
 
     
     before('Login to Portal', () => {
@@ -93,36 +107,19 @@ it('Venue  Page', () => {
     
     
     
-
-
-  //Write the code for venue Setting Edit 
-
-  //venueSettingEditObj.getvenueEditIcon();
-  venueSettingEditObj.getvenueEditIcon().click({ force: true });
-
-    venueSettingEditObj.geteditVenuePageTitle().contains("Edit Venue").should("exist");
-     cy.get('.ant-drawer-body').should('be.visible'); 
-
-
     
 
-     venueSettingEditObj.getvenueNameEdit().should('have.value', 'Cypress Automation Test (VMS)');
-     venueSettingEditObj.getvenueDescEdit().should('have.value', 'Cypress Automation Test (VMS)');
-     cy.get('.ant-drawer-body').should('be.visible');
-  venueSettingEditObj.getaddressLine1OnVenueEdit().invoke('attr', 'placeholder').should('eq', 'Sector 48');
-     venueSettingEditObj.getstateVenueEdit().invoke('attr', 'placeholder').should('eq', 'Haryana');
-     venueSettingEditObj.getcountryVenueEdit().invoke('attr', 'placeholder').should('eq', 'India');
-     venueSettingEditObj.getPincodeVenueEdit().invoke('attr', 'placeholder').should('eq', '122001');
-     venueSettingEditObj.getcancelbtnEditVenue().click();
+
+  //Write the code for venue Setting GDPR 
+
+  ManageVenueSettingObj.getmanageSettingOption().click();
+  venueSettingGDPRObj.getgDPROptionVenueSetting().click();
+  venueSettingGDPRObj.getacceptTitleVenueSetting().type("I Accept the terms and condition");
+  venueSettingGDPRObj.getrejectTitleVenueSetting().type("I reject the terms and condition");
+  venueSettingGDPRObj.getsavebtnGDPRVenueSetting().click();
+
+  cy.get('.ct-toast').should('include.text', 'venue setting updated');
 
 
-
-
-
-
-    
     })
-    
-    
 })
-    

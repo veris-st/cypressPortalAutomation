@@ -1,6 +1,10 @@
 import LoginPage from "../pageObject/loginPages.js"
 import AddVenue from "../pageObject/addVenue.js";
 import VenueSettingEdit from "../pageObject/venue_Setting_Edit.js";
+import ManageVenueSetting from "../pageObject/venue_Setting_manageSetting.js";
+import VenueSettingNotificationCustom from "../pageObject/venueSetting_notification.js";
+
+
 
 
 const { faker } = require('@faker-js/faker');
@@ -35,9 +39,11 @@ const visitorReportTemplateName="Cypress Automation Description Text";
 const loginPage= new LoginPage()
 const venueAdditionObj=new AddVenue()
 const venueSettingEditObj = new VenueSettingEdit()
+const ManageVenueSettingObj=new ManageVenueSetting()
+const venueSettingNotificationCustomObj = new VenueSettingNotificationCustom()
 
 //Write code for Create Invite Page 
-describe(' Venue Page : Venue Edit', () => {
+describe(' Venue Page : Venue Setting - Notification', () => {
 
     
     before('Login to Portal', () => {
@@ -93,36 +99,27 @@ it('Venue  Page', () => {
     
     
     
-
-
-  //Write the code for venue Setting Edit 
-
-  //venueSettingEditObj.getvenueEditIcon();
-  venueSettingEditObj.getvenueEditIcon().click({ force: true });
-
-    venueSettingEditObj.geteditVenuePageTitle().contains("Edit Venue").should("exist");
-     cy.get('.ant-drawer-body').should('be.visible'); 
-
-
     
 
-     venueSettingEditObj.getvenueNameEdit().should('have.value', 'Cypress Automation Test (VMS)');
-     venueSettingEditObj.getvenueDescEdit().should('have.value', 'Cypress Automation Test (VMS)');
-     cy.get('.ant-drawer-body').should('be.visible');
-  venueSettingEditObj.getaddressLine1OnVenueEdit().invoke('attr', 'placeholder').should('eq', 'Sector 48');
-     venueSettingEditObj.getstateVenueEdit().invoke('attr', 'placeholder').should('eq', 'Haryana');
-     venueSettingEditObj.getcountryVenueEdit().invoke('attr', 'placeholder').should('eq', 'India');
-     venueSettingEditObj.getPincodeVenueEdit().invoke('attr', 'placeholder').should('eq', '122001');
-     venueSettingEditObj.getcancelbtnEditVenue().click();
+
+  //Write the code for venue Setting Noticiation 
+
+  ManageVenueSettingObj.getmanageSettingOption().click();
+  venueSettingNotificationCustomObj.getnotificationOption().click();
+  venueSettingNotificationCustomObj.getinvite_Create_Notification().type("We are excited to invite you to veris engineering festival ");
+  venueSettingNotificationCustomObj.getinvite_Cancel_Notification().type("I hope this message finds you well. I regret to inform you that due to unforeseen circumstances, we have to cancel the upcoming event");
+  venueSettingNotificationCustomObj.getcheckin_Notification().type("We hope this message finds you well. As part of our ongoing efforts to stay connected and ensure smooth progress, it's time for your regular check-in.");
+  venueSettingNotificationCustomObj.getalarmTextNotofication().type("Fire cought in office , run away");
+  venueSettingNotificationCustomObj.getsavebtmAtVenueNotification().click();
+  cy.get('.ct-toast').should('include.text', 'venue setting updated');
+
+  
 
 
 
 
 
 
-    
+
     })
-    
-    
 })
-    

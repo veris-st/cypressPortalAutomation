@@ -1,6 +1,7 @@
 import LoginPage from "../pageObject/loginPages.js"
 import AddVenue from "../pageObject/addVenue.js";
 import VenueSettingEdit from "../pageObject/venue_Setting_Edit.js";
+import ManageVenueSetting from "../pageObject/venue_Setting_manageSetting.js";
 
 
 const { faker } = require('@faker-js/faker');
@@ -35,6 +36,7 @@ const visitorReportTemplateName="Cypress Automation Description Text";
 const loginPage= new LoginPage()
 const venueAdditionObj=new AddVenue()
 const venueSettingEditObj = new VenueSettingEdit()
+const ManageVenueSettingObj=new ManageVenueSetting()
 
 //Write code for Create Invite Page 
 describe(' Venue Page : Venue Edit', () => {
@@ -93,27 +95,22 @@ it('Venue  Page', () => {
     
     
     
+    
 
 
   //Write the code for venue Setting Edit 
 
-  //venueSettingEditObj.getvenueEditIcon();
-  venueSettingEditObj.getvenueEditIcon().click({ force: true });
+  //ManageVenueSettingObj.getmanageSettingOption().click({ force: true });
+  ManageVenueSettingObj.getmanageSettingOption().click();
+  //ManageVenueSettingObj.getmanageSettingOption().contains("General Settings").should("exist");
+ManageVenueSettingObj.getverifyOTPGeneralSetting().eq(0).should('exist');
+ManageVenueSettingObj.getskipOTPTimer().should('have.value','10');
+ManageVenueSettingObj.getguardInput().should('have.value','11111');
+ManageVenueSettingObj.getdataRetentionPolicy().should('have.value','0');
+ManageVenueSettingObj.getsyncTerminalActivityLog().eq(0).should('exist');
+ManageVenueSettingObj.getsaveBtnOfGeneralSetting();
+cy.get('.ct-toast').should('include.text', 'venue setting updated');
 
-    venueSettingEditObj.geteditVenuePageTitle().contains("Edit Venue").should("exist");
-     cy.get('.ant-drawer-body').should('be.visible'); 
-
-
-    
-
-     venueSettingEditObj.getvenueNameEdit().should('have.value', 'Cypress Automation Test (VMS)');
-     venueSettingEditObj.getvenueDescEdit().should('have.value', 'Cypress Automation Test (VMS)');
-     cy.get('.ant-drawer-body').should('be.visible');
-  venueSettingEditObj.getaddressLine1OnVenueEdit().invoke('attr', 'placeholder').should('eq', 'Sector 48');
-     venueSettingEditObj.getstateVenueEdit().invoke('attr', 'placeholder').should('eq', 'Haryana');
-     venueSettingEditObj.getcountryVenueEdit().invoke('attr', 'placeholder').should('eq', 'India');
-     venueSettingEditObj.getPincodeVenueEdit().invoke('attr', 'placeholder').should('eq', '122001');
-     venueSettingEditObj.getcancelbtnEditVenue().click();
 
 
 

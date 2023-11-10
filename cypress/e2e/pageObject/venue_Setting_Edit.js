@@ -6,7 +6,7 @@ class VenueSettingEdit{
     venueNameEdit='.addNew > :nth-child(1) > .ant-input';
     venueDescEdit='.addNew > :nth-child(2) > .ant-input';
     addressLine1OnVenueEdit='[placeholder="Sector 48"]';
-    stateVenueEdit='[placeholder="Sector 48"]';
+    stateVenueEdit='[placeholder="Haryana"]';
     countryVenueEdit='.ant-row > :nth-child(1) > .ant-input';
     PincodeVenueEdit='.ant-row > :nth-child(2) > .ant-input';
     cancelbtnEditVenue='.ant-drawer-footer > div > .ant-btn-default > span'
